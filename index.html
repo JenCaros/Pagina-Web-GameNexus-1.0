@@ -12,18 +12,13 @@
 
 <body>
     <header>
-        <!-- ======== NAVBAR CORREGIDA PARA MÓVILES (EL RESTO DEL CÓDIGO ESTÁ INTACTO) ======== -->
         <nav class="navbar navbar-expand-lg bg-dark border-bottom border-secondary">
             <div class="container-fluid">
                 <a class="navbar-brand fw-bold fs-4" href="index.html">GameNexus</a>
-
-                <!-- Botón de Hamburguesa (solo visible en móviles) -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
                     aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
-                <!-- Contenido que se colapsa en móviles -->
                 <div class="collapse navbar-collapse" id="navbarContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
@@ -31,20 +26,17 @@
                         <li class="nav-item"><a class="nav-link" href="#ofertas">Ofertas</a></li>
                         <li class="nav-item"><a class="nav-link" href="ayuda.html">Ayuda y Contacto</a></li>
                     </ul>
-                    <!-- Buscador para Desktop (se oculta en móvil) -->
                     <form class="d-none d-lg-flex mx-auto w-50" role="search">
                         <input class="form-control me-2" type="search" placeholder="Buscar juegos, géneros, DLCs...">
                         <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
                     </form>
                 </div>
-
-                <!-- Iconos de usuario y carrito fuera del colapso para acceso rápido -->
                 <div class="d-flex align-items-center">
                     <div class="nav-item dropdown user-dropdown me-3">
                         <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             <span class="d-none d-lg-inline">Hola,<br><strong>Inicia sesión</strong></span>
-                            <i class="bi bi-person-circle fs-3 d-lg-none"></i> <!-- Icono solo para móvil -->
+                            <i class="bi bi-person-circle fs-3 d-lg-none"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
@@ -57,11 +49,11 @@
                             <li><a class="dropdown-item" href="#">Mi cuenta</a></li>
                         </ul>
                     </div>
-                    <a href="#" class="nav-link text-white fs-4"><i class="bi bi-cart"></i></a>
+                    <!-- Icono del carrito ahora enlaza a la página del carrito -->
+                    <a href="carrito.html" class="nav-link text-white fs-4"><i class="bi bi-cart"></i></a>
                 </div>
             </div>
         </nav>
-        <!-- Buscador para la vista móvil (solo visible en móvil) -->
         <div class="bg-dark p-3 d-lg-none">
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Buscar juego...">
@@ -77,7 +69,6 @@
                 class="btn btn-warning btn-lg fw-bold">Ver colección</a>
         </div>
     </section>
-
     <section class="info-bar bg-light text-dark py-4">
         <div class="container">
             <div class="row">
@@ -105,7 +96,6 @@
             </div>
         </div>
     </section>
-
     <div class="promo-banner text-center">🌸 ¡REBAJAS DE PRIMAVERA! 🌸 Hasta 50% de descuento en títulos seleccionados.
     </div>
 
@@ -123,8 +113,10 @@
                                             class="card-img-top" alt="RE4 Remake"></div>
                                     <div class="card-body">
                                         <h5 class="card-title">Resident Evil 4 Remake</h5>
-                                        <div class="price-container"><span class="price-final">S/ 219.90</span></div><a
-                                            href="#" class="btn btn-primary w-100 mt-2">Comprar</a>
+                                        <div class="price-container"><span class="price-final">S/ 219.90</span></div>
+                                        <button type="button" class="btn btn-primary w-100 mt-2 btn-agregar-carrito"
+                                            data-id="re4" data-nombre="Resident Evil 4 Remake" data-precio="219.90"
+                                            data-imagen="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbNLraV8gQWiBhZMOeXpQtdvogiwuixt4Yr24OzbDCQhyZzBNNxE7ncakFeOkkG2wJa8E&usqp=CAU">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -135,8 +127,10 @@
                                             class="card-img-top" alt="Alan Wake 2"></div>
                                     <div class="card-body">
                                         <h5 class="card-title">Alan Wake 2</h5>
-                                        <div class="price-container"><span class="price-final">S/ 189.90</span></div><a
-                                            href="#" class="btn btn-primary w-100 mt-2">Comprar</a>
+                                        <div class="price-container"><span class="price-final">S/ 189.90</span></div>
+                                        <button type="button" class="btn btn-primary w-100 mt-2 btn-agregar-carrito"
+                                            data-id="alan-wake-2" data-nombre="Alan Wake 2" data-precio="189.90"
+                                            data-imagen="https://cdn1.epicgames.com/offer/c4763f236d08423eb47b4c3008779c84/EGS_AlanWake2_RemedyEntertainment_S2_1200x1600-c7c8091ddac0f9669c8e5905bca88aaa">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -147,8 +141,10 @@
                                             class="card-img-top" alt="Elden Ring DLC"></div>
                                     <div class="card-body">
                                         <h5 class="card-title">Shadow of the Erdtree</h5>
-                                        <div class="price-container"><span class="price-final">S/ 149.90</span></div><a
-                                            href="#" class="btn btn-primary w-100 mt-2">Comprar</a>
+                                        <div class="price-container"><span class="price-final">S/ 149.90</span></div>
+                                        <button type="button" class="btn btn-primary w-100 mt-2 btn-agregar-carrito"
+                                            data-id="erdtree" data-nombre="Shadow of the Erdtree" data-precio="149.90"
+                                            data-imagen="https://s.pacn.ws/1/p/19q/elden-ring-shadow-of-the-erdtree-official-complete-guide-823395.1.jpg?v=sj5zyv&width=800&crop=1000,1415">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -159,8 +155,10 @@
                                             class="card-img-top" alt="Helldivers 2"></div>
                                     <div class="card-body">
                                         <h5 class="card-title">Helldivers 2</h5>
-                                        <div class="price-container"><span class="price-final">S/ 129.90</span></div><a
-                                            href="#" class="btn btn-primary w-100 mt-2">Comprar</a>
+                                        <div class="price-container"><span class="price-final">S/ 129.90</span></div>
+                                        <button type="button" class="btn btn-primary w-100 mt-2 btn-agregar-carrito"
+                                            data-id="helldivers-2" data-nombre="Helldivers 2" data-precio="129.90"
+                                            data-imagen="https://image.api.playstation.com/vulcan/ap/rnd/202509/0421/7b29684b4459ddccd5f00633d21f58cbaad699b955a43fda.jpg">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -175,8 +173,11 @@
                                             class="card-img-top" alt="God of War"></div>
                                     <div class="card-body">
                                         <h5 class="card-title">God of War: Ragnarök</h5>
-                                        <div class="price-container"><span class="price-final">S/ 249.90</span></div><a
-                                            href="#" class="btn btn-primary w-100 mt-2">Comprar</a>
+                                        <div class="price-container"><span class="price-final">S/ 249.90</span></div>
+                                        <button type="button" class="btn btn-primary w-100 mt-2 btn-agregar-carrito"
+                                            data-id="gow-ragnarok" data-nombre="God of War: Ragnarök"
+                                            data-precio="249.90"
+                                            data-imagen="https://image.api.playstation.com/vulcan/ap/rnd/202207/1117/CyWGhpXfSmIcuecOFXG841JE.png">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -187,8 +188,11 @@
                                             class="card-img-top" alt="Spider-Man 2"></div>
                                     <div class="card-body">
                                         <h5 class="card-title">Marvel's Spider-Man 2</h5>
-                                        <div class="price-container"><span class="price-final">S/ 259.90</span></div><a
-                                            href="#" class="btn btn-primary w-100 mt-2">Comprar</a>
+                                        <div class="price-container"><span class="price-final">S/ 259.90</span></div>
+                                        <button type="button" class="btn btn-primary w-100 mt-2 btn-agregar-carrito"
+                                            data-id="spiderman-2" data-nombre="Marvel's Spider-Man 2"
+                                            data-precio="259.90"
+                                            data-imagen="https://blizzstoreperu.com/cdn/shop/products/EGS_MarvelsSpiderManRemastered_InsomniacGamesNixxesSoftware_S2_1200x1600-76424286902489f4d9639ac9b735c2b2.jpg?v=1671732172">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -199,20 +203,24 @@
                                             class="card-img-top" alt="Ghost of Tsushima"></div>
                                     <div class="card-body">
                                         <h5 class="card-title">Ghost of Tsushima</h5>
-                                        <div class="price-container"><span class="price-final">S/ 199.90</span></div><a
-                                            href="#" class="btn btn-primary w-100 mt-2">Comprar</a>
+                                        <div class="price-container"><span class="price-final">S/ 199.90</span></div>
+                                        <button type="button" class="btn btn-primary w-100 mt-2 btn-agregar-carrito"
+                                            data-id="ghost-tsushima" data-nombre="Ghost of Tsushima"
+                                            data-precio="199.90"
+                                            data-imagen="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDG6vFJNLN07R_7PYStdvH7RQqXb3dTRhIP7knDFiDNEaopr67GDQVMST1301QdWzuIf8&usqp=CAU">Comprar</button>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="product-card product-card-poster">
-                                    <div class="product-image-container"><img
-                                            src="https://i.imgflip.com/8g6g3s.jpg"
+                                    <div class="product-image-container"><img src="https://i.imgflip.com/8g6g3s.jpg"
                                             class="card-img-top" alt="Mortal Kombat 1"></div>
                                     <div class="card-body">
                                         <h5 class="card-title">Mortal Kombat 1</h5>
-                                        <div class="price-container"><span class="price-final">S/ 229.90</span></div><a
-                                            href="#" class="btn btn-primary w-100 mt-2">Comprar</a>
+                                        <div class="price-container"><span class="price-final">S/ 229.90</span></div>
+                                        <button type="button" class="btn btn-primary w-100 mt-2 btn-agregar-carrito"
+                                            data-id="mk1" data-nombre="Mortal Kombat 1" data-precio="229.90"
+                                            data-imagen="https://i.imgflip.com/8g6g3s.jpg">Comprar</button>
                                     </div>
                                 </div>
                             </div>
@@ -237,8 +245,11 @@
                         <div class="card-body">
                             <h5 class="card-title">Cyberpunk 2077</h5>
                             <div class="price-container"><span class="price-original">S/ 199.90</span><span
-                                    class="price-final">S/ 159.90</span></div><a href="#"
-                                class="btn btn-primary w-100 mt-2">Añadir al carrito</a>
+                                    class="price-final">S/ 159.90</span></div><button type="button"
+                                class="btn btn-primary w-100 mt-2 btn-agregar-carrito" data-id="cp2077"
+                                data-nombre="Cyberpunk 2077" data-precio="159.90"
+                                data-imagen="https://cdn.akamai.steamstatic.com/steam/apps/1091500/header.jpg?t=1693596864">Añadir
+                                al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -250,8 +261,11 @@
                         <div class="card-body">
                             <h5 class="card-title">The Witcher 3: Wild Hunt</h5>
                             <div class="price-container"><span class="price-original">S/ 159.90</span><span
-                                    class="price-final">S/ 79.90</span></div><a href="#"
-                                class="btn btn-primary w-100 mt-2">Añadir al carrito</a>
+                                    class="price-final">S/ 79.90</span></div><button type="button"
+                                class="btn btn-primary w-100 mt-2 btn-agregar-carrito" data-id="witcher3"
+                                data-nombre="The Witcher 3: Wild Hunt" data-precio="79.90"
+                                data-imagen="https://cdn.akamai.steamstatic.com/steam/apps/292030/header.jpg?t=1680026312">Añadir
+                                al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -263,8 +277,11 @@
                         <div class="card-body">
                             <h5 class="card-title">Starfield</h5>
                             <div class="price-container"><span class="price-original">S/ 249.90</span><span
-                                    class="price-final">S/ 212.40</span></div><a href="#"
-                                class="btn btn-primary w-100 mt-2">Añadir al carrito</a>
+                                    class="price-final">S/ 212.40</span></div><button type="button"
+                                class="btn btn-primary w-100 mt-2 btn-agregar-carrito" data-id="starfield"
+                                data-nombre="Starfield" data-precio="212.40"
+                                data-imagen="https://cdn.akamai.steamstatic.com/steam/apps/1716740/header.jpg?t=1700676759">Añadir
+                                al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -276,8 +293,11 @@
                         <div class="card-body">
                             <h5 class="card-title">Resident Evil 2 Remake</h5>
                             <div class="price-container"><span class="price-original">S/ 159.90</span><span
-                                    class="price-final">S/ 95.90</span></div><a href="#"
-                                class="btn btn-primary w-100 mt-2">Añadir al carrito</a>
+                                    class="price-final">S/ 95.90</span></div><button type="button"
+                                class="btn btn-primary w-100 mt-2 btn-agregar-carrito" data-id="re2"
+                                data-nombre="Resident Evil 2 Remake" data-precio="95.90"
+                                data-imagen="https://cdn.akamai.steamstatic.com/steam/apps/883710/header.jpg?t=1695140954">Añadir
+                                al carrito</button>
                         </div>
                     </div>
                 </div>
@@ -293,8 +313,10 @@
                             class="card-img-top" alt="Baldur's Gate 3">
                         <div class="card-body">
                             <h5 class="card-title">Baldur's Gate 3</h5>
-                            <div class="price-container"><span class="price-final">S/ 229.90</span></div><a href="#"
-                                class="btn btn-primary w-100 mt-2">Comprar</a>
+                            <div class="price-container"><span class="price-final">S/ 229.90</span></div><button
+                                type="button" class="btn btn-primary w-100 mt-2 btn-agregar-carrito" data-id="bg3"
+                                data-nombre="Baldur's Gate 3" data-precio="229.90"
+                                data-imagen="https://cdn.akamai.steamstatic.com/steam/apps/1086940/header.jpg?t=1700682132">Comprar</button>
                         </div>
                     </div>
                 </div>
@@ -304,8 +326,10 @@
                             class="card-img-top" alt="Fallout 4">
                         <div class="card-body">
                             <h5 class="card-title">Fallout 4</h5>
-                            <div class="price-container"><span class="price-final">S/ 79.90</span></div><a href="#"
-                                class="btn btn-primary w-100 mt-2">Comprar</a>
+                            <div class="price-container"><span class="price-final">S/ 79.90</span></div><button
+                                type="button" class="btn btn-primary w-100 mt-2 btn-agregar-carrito" data-id="fallout4"
+                                data-nombre="Fallout 4" data-precio="79.90"
+                                data-imagen="https://cdn.akamai.steamstatic.com/steam/apps/377160/header.jpg?t=1699310803">Comprar</button>
                         </div>
                     </div>
                 </div>
@@ -315,8 +339,10 @@
                             class="card-img-top" alt="GTA V">
                         <div class="card-body">
                             <h5 class="card-title">Grand Theft Auto V</h5>
-                            <div class="price-container"><span class="price-final">S/ 89.90</span></div><a href="#"
-                                class="btn btn-primary w-100 mt-2">Comprar</a>
+                            <div class="price-container"><span class="price-final">S/ 89.90</span></div><button
+                                type="button" class="btn btn-primary w-100 mt-2 btn-agregar-carrito" data-id="gtav"
+                                data-nombre="Grand Theft Auto V" data-precio="89.90"
+                                data-imagen="https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg?t=1701905303">Comprar</button>
                         </div>
                     </div>
                 </div>
@@ -326,8 +352,10 @@
                             class="card-img-top" alt="Rise of the Tomb Raider">
                         <div class="card-body">
                             <h5 class="card-title">Rise of the Tomb Raider</h5>
-                            <div class="price-container"><span class="price-final">S/ 99.90</span></div><a href="#"
-                                class="btn btn-primary w-100 mt-2">Comprar</a>
+                            <div class="price-container"><span class="price-final">S/ 99.90</span></div><button
+                                type="button" class="btn btn-primary w-100 mt-2 btn-agregar-carrito"
+                                data-id="tombraider" data-nombre="Rise of the Tomb Raider" data-precio="99.90"
+                                data-imagen="https://cdn.akamai.steamstatic.com/steam/apps/391220/header.jpg?t=1693410294">Comprar</button>
                         </div>
                     </div>
                 </div>
@@ -342,10 +370,9 @@
         </section>
     </main>
 
-   <footer class="site-footer mt-5">
+    <footer class="site-footer mt-5">
         <div class="container">
             <div class="row pt-5 pb-4">
-                <!-- Columna 1: Contacto -->
                 <div class="col-lg-3 col-md-6 mb-4">
                     <h5>CONTACTO GAMENEXUS</h5>
                     <ul class="list-unstyled">
@@ -353,15 +380,11 @@
                         <li class="mb-2"><i class="bi bi-telephone-fill me-2"></i>+51 9xx xxx xxx</li>
                         <li class="mb-2"><i class="bi bi-envelope-fill me-2"></i>soporte@gamenexus.com</li>
                     </ul>
-                    <div class="social-icons mt-3">
-                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-twitch"></i></a>
-                    </div>
+                    <div class="social-icons mt-3"><a href="#" class="social-icon"><i class="bi bi-facebook"></i></a><a
+                            href="#" class="social-icon"><i class="bi bi-twitter-x"></i></a><a href="#"
+                            class="social-icon"><i class="bi bi-instagram"></i></a><a href="#" class="social-icon"><i
+                                class="bi bi-twitch"></i></a></div>
                 </div>
-
-                <!-- Columna 2: Información -->
                 <div class="col-lg-3 col-md-6 mb-4">
                     <h5>INFORMACIÓN</h5>
                     <ul class="list-unstyled footer-links">
@@ -372,8 +395,6 @@
                         <li><a href="ayuda.html">Contáctanos</a></li>
                     </ul>
                 </div>
-
-                <!-- Columna 3: Mi Cuenta -->
                 <div class="col-lg-3 col-md-6 mb-4">
                     <h5>MI CUENTA</h5>
                     <ul class="list-unstyled footer-links">
@@ -383,96 +404,63 @@
                         <li><a href="#">Reembolsos</a></li>
                     </ul>
                 </div>
-
-                <!-- Columna 4: Boletín -->
                 <div class="col-lg-3 col-md-6 mb-4">
                     <h5>BOLETÍN INFORMATIVO</h5>
                     <p>Suscríbete y sé el primero en recibir nuestras ofertas exclusivas y noticias.</p>
-                    <form class="newsletter-form">
-                        <input type="email" class="form-control" placeholder="Ingresa tu correo aquí...">
-                        <button type="submit" class="btn btn-danger mt-2 w-100">SUSCRÍBETE</button>
-                    </form>
+                    <form class="newsletter-form"><input type="email" class="form-control"
+                            placeholder="Ingresa tu correo aquí..."><button type="submit"
+                            class="btn btn-danger mt-2 w-100">SUSCRÍBETE</button></form>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
                 <p class="mb-3 mb-md-0">&copy; 2025 - GameNexus. Desarrollado con ❤️.</p>
-                <div class="payment-icons">
-                    <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa" height="30">
-                    <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard" height="30">
-                    <img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal" height="30">
-                    <img src="https://cdn-icons-png.flaticon.com/256/825/825539.png" alt="American Express" height="30">
-                </div>
+                <div class="payment-icons"><img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa"
+                        height="30"><img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="Mastercard"
+                        height="30"><img src="https://img.icons8.com/color/48/000000/paypal.png" alt="PayPal"
+                        height="30"><img src="https://cdn-icons-png.flaticon.com/256/825/825539.png"
+                        alt="American Express" height="30"></div>
             </div>
         </div>
     </footer>
 
-    <div class="modal fade" id="loginModal" tabindex="-1">
+    <div class="modal fade" id="loginModal" tabindex="-1"><!-- ... Tu modal de login ... --></div>
+    <div class="modal fade" id="registerModal" tabindex="-1"><!-- ... Tu modal de registro ... --></div>
+
+    <!-- =================================================================== -->
+    <!-- NUEVO MODAL: PRODUCTO AGREGADO AL CARRITO                           -->
+    <!-- =================================================================== -->
+    <div class="modal fade" id="agregadoAlCarritoModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fs-3 fw-bold">Inicia sesión</h5><button type="button" class="btn-close"
-                        data-bs-dismiss="modal"></button>
+            <div class="modal-content bg-light text-dark">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title fs-5"><i class="bi bi-check-circle-fill text-success me-2"></i>Producto
+                        agregado a tu Carro</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
-                    <form>
-                        <div class="mb-3"><label for="loginEmail" class="form-label">Correo electrónico</label><input
-                                type="email" class="form-control" id="loginEmail" placeholder="Ingresa tu correo"></div>
-                        <div class="mb-3"><label for="loginPassword" class="form-label">Contraseña</label><input
-                                type="password" class="form-control" id="loginPassword"
-                                placeholder="Ingresa tu contraseña"></div>
-                        <div class="d-grid"><button type="submit" class="btn btn-warning fw-bold">Ingresar</button>
+                    <div class="d-flex align-items-center">
+                        <img src="" id="modal-producto-imagen" class="img-fluid rounded me-3"
+                            style="width: 60px; height: 80px; object-fit: cover;">
+                        <div>
+                            <h6 id="modal-producto-nombre" class="mb-0">Nombre del Producto</h6>
+                            <p id="modal-producto-precio" class="text-danger fw-bold mb-0">S/ 0.00</p>
                         </div>
-                    </form>
+                    </div>
                 </div>
-                <div class="modal-footer justify-content-center">
-                    <p>¿No tienes cuenta? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal"
-                            data-bs-target="#registerModal">Regístrate</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="registerModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fs-3 fw-bold">Crea tu cuenta</h5><button type="button" class="btn-close"
-                        data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3"><label for="registerName" class="form-label">Nombre</label><input type="text"
-                                class="form-control" id="registerName" placeholder="Ingresa tu nombre"></div>
-                        <div class="mb-3"><label for="registerEmail" class="form-label">Correo electrónico</label><input
-                                type="email" class="form-control" id="registerEmail" placeholder="Ingresa tu correo">
-                        </div>
-                        <div class="mb-3"><label for="registerPassword" class="form-label">Contraseña</label><input
-                                type="password" class="form-control" id="registerPassword"
-                                placeholder="Crea una contraseña"></div>
-                        <div class="d-grid"><button type="submit" class="btn btn-warning fw-bold">Crear Cuenta</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer justify-content-center">
-                    <p>¿Ya tienes una cuenta? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal"
-                            data-bs-target="#loginModal">Inicia sesión</a></p>
+                <div class="modal-footer border-0">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Seguir
+                        comprando</button>
+                    <a href="carrito.html" class="btn btn-danger">Ir al Carro</a>
                 </div>
             </div>
         </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <!-- Se cambia el script a tienda.js para la funcionalidad del carrito -->
+    <script src="tienda.js"></script>
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
