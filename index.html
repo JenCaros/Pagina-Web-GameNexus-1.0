@@ -12,7 +12,7 @@
 
 <body>
     <header>
-        <!-- ======== NAVBAR CORREGIDA PARA MÓVILES (CON TU CARRUSEL INTACTO) ======== -->
+        <!-- ======== NAVBAR CORREGIDA PARA MÓVILES (EL RESTO DEL CÓDIGO ESTÁ INTACTO) ======== -->
         <nav class="navbar navbar-expand-lg bg-dark border-bottom border-secondary">
             <div class="container-fluid">
                 <a class="navbar-brand fw-bold fs-4" href="index.html">GameNexus</a>
@@ -31,7 +31,7 @@
                         <li class="nav-item"><a class="nav-link" href="#ofertas">Ofertas</a></li>
                         <li class="nav-item"><a class="nav-link" href="ayuda.html">Ayuda y Contacto</a></li>
                     </ul>
-                    <!-- El buscador en PC está aquí, pero en móvil lo clonaremos abajo -->
+                    <!-- Buscador para Desktop (se oculta en móvil) -->
                     <form class="d-none d-lg-flex mx-auto w-50" role="search">
                         <input class="form-control me-2" type="search" placeholder="Buscar juegos, géneros, DLCs...">
                         <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
@@ -43,8 +43,8 @@
                     <div class="nav-item dropdown user-dropdown me-3">
                         <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
-                            <div>Hola,<br><strong>Inicia sesión</strong></div>
-                            <i class="bi bi-chevron-down ms-2 d-none d-lg-inline"></i>
+                            <span class="d-none d-lg-inline">Hola,<br><strong>Inicia sesión</strong></span>
+                            <i class="bi bi-person-circle fs-3 d-lg-none"></i> <!-- Icono solo para móvil -->
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
@@ -61,7 +61,7 @@
                 </div>
             </div>
         </nav>
-        <!-- Buscador para la vista móvil, fuera del nav pero visualmente dentro -->
+        <!-- Buscador para la vista móvil (solo visible en móvil) -->
         <div class="bg-dark p-3 d-lg-none">
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Buscar juego...">
@@ -110,7 +110,6 @@
     </div>
 
     <main class="container my-5">
-        <!-- TU CÓDIGO DEL CARRUSEL ORIGINAL, SIN CAMBIOS -->
         <section id="novedades" class="mb-5">
             <h2 class="section-title"><span>Lo Nuevo en GameNexus</span></h2>
             <div id="carouselNovedades" class="carousel slide">
@@ -349,8 +348,59 @@
         </div>
     </footer>
 
-    <div class="modal fade" id="loginModal" tabindex="-1"><!-- ... Tu modal de login ... --></div>
-    <div class="modal fade" id="registerModal" tabindex="-1"><!-- ... Tu modal de registro ... --></div>
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-3 fw-bold">Inicia sesión</h5><button type="button" class="btn-close"
+                        data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3"><label for="loginEmail" class="form-label">Correo electrónico</label><input
+                                type="email" class="form-control" id="loginEmail" placeholder="Ingresa tu correo"></div>
+                        <div class="mb-3"><label for="loginPassword" class="form-label">Contraseña</label><input
+                                type="password" class="form-control" id="loginPassword"
+                                placeholder="Ingresa tu contraseña"></div>
+                        <div class="d-grid"><button type="submit" class="btn btn-warning fw-bold">Ingresar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <p>¿No tienes cuenta? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal"
+                            data-bs-target="#registerModal">Regístrate</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="registerModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-3 fw-bold">Crea tu cuenta</h5><button type="button" class="btn-close"
+                        data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3"><label for="registerName" class="form-label">Nombre</label><input type="text"
+                                class="form-control" id="registerName" placeholder="Ingresa tu nombre"></div>
+                        <div class="mb-3"><label for="registerEmail" class="form-label">Correo electrónico</label><input
+                                type="email" class="form-control" id="registerEmail" placeholder="Ingresa tu correo">
+                        </div>
+                        <div class="mb-3"><label for="registerPassword" class="form-label">Contraseña</label><input
+                                type="password" class="form-control" id="registerPassword"
+                                placeholder="Crea una contraseña"></div>
+                        <div class="d-grid"><button type="submit" class="btn btn-warning fw-bold">Crear Cuenta</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <p>¿Ya tienes una cuenta? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">Inicia sesión</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
