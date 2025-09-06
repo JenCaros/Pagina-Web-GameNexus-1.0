@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
     function renderizarCarrito() {
-        // Limpiar el contenedor antes de renderizar
         carritoContainer.innerHTML = '';
         actualizarContador();
 
@@ -66,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function quitarDelCarrito(id) {
         carrito = carrito.filter(producto => producto.id !== id);
         localStorage.setItem('carrito', JSON.stringify(carrito));
-        renderizarCarrito(); // Volver a dibujar todo el carrito
+        renderizarCarrito();
     }
 
     function actualizarContador() {
