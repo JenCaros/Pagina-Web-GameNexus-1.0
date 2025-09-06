@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" data-bs-theme="dark">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,39 +9,44 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
+        <!-- ======== NAVBAR ADAPTABLE (IDÉNTICA A LA DEL INDEX) ======== -->
         <nav class="navbar navbar-expand-lg bg-dark border-bottom border-secondary">
             <div class="container-fluid">
                 <a class="navbar-brand fw-bold fs-4" href="index.html">GameNexus</a>
-                <!-- Menú de Navegación (se marca "Ayuda" como activa en esta página) -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#catalogo-completo">Catálogo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#ofertas">Ofertas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="ayuda.html">Ayuda y Contacto</a>
-                    </li>
-                </ul>
-                <form class="d-flex mx-auto w-50" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar juegos, géneros, DLCs...">
-                    <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
-                </form>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#catalogo-completo">Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="index.html#ofertas">Ofertas</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="ayuda.html">Ayuda y Contacto</a></li>
+                    </ul>
+                    <form class="d-none d-lg-flex mx-auto w-50" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar juegos, géneros, DLCs...">
+                        <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+                </div>
                 <div class="d-flex align-items-center">
                     <div class="nav-item dropdown user-dropdown me-3">
-                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
-                            <div>Hola,<br><strong>Inicia sesión</strong></div><i class="bi bi-chevron-down ms-2"></i>
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            <span class="d-none d-lg-inline">Hola,<br><strong>Inicia sesión</strong></span>
+                            <i class="bi bi-person-circle fs-3 d-lg-none"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
-                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Inicia sesión</a></li>
-                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Regístrate</a></li>
-                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#loginModal">Inicia sesión</a></li>
+                            <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
+                                    data-bs-target="#registerModal">Regístrate</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item" href="#">Mi cuenta</a></li>
                         </ul>
                     </div>
@@ -48,6 +54,12 @@
                 </div>
             </div>
         </nav>
+        <div class="bg-dark p-3 d-lg-none">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar juego...">
+                <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
     </header>
 
     <main class="container my-5">
@@ -57,9 +69,36 @@
         <section id="faq">
             <h2 class="mb-4">Preguntas Frecuentes</h2>
             <div class="accordion" id="faqAccordion">
-                <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">¿Cómo recibo el juego que compré?</button></h2><div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Una vez que tu pago es confirmado, recibirás la clave de activación del juego directamente en el correo electrónico que usaste para registrarte. ¡El proceso es 100% digital e instantáneo!</div></div></div>
-                <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">¿Qué métodos de pago aceptan?</button></h2><div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Aceptamos todas las tarjetas de crédito y débito (Visa, MasterCard, American Express), así como pagos a través de PayPal para tu mayor seguridad y comodidad.</div></div></div>
-                <div class="accordion-item"><h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">¿Las claves de los juegos son originales?</button></h2><div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Sí, absolutamente. Todas nuestras claves son 100% originales y provienen de distribuidores autorizados. Garantizamos que tu juego se activará sin problemas en la plataforma correspondiente (Steam, Epic Games, etc.).</div></div></div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseOne">¿Cómo recibo el juego que
+                            compré?</button></h2>
+                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Una vez que tu pago es confirmado, recibirás la clave de activación
+                            del juego directamente en el correo electrónico que usaste para registrarte. ¡El proceso es
+                            100% digital e instantáneo!</div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseTwo">¿Qué métodos de pago
+                            aceptan?</button></h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Aceptamos todas las tarjetas de crédito y débito (Visa, MasterCard,
+                            American Express), así como pagos a través de PayPal para tu mayor seguridad y comodidad.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button"
+                            data-bs-toggle="collapse" data-bs-target="#collapseThree">¿Las claves de los juegos son
+                            originales?</button></h2>
+                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">Sí, absolutamente. Todas nuestras claves son 100% originales y
+                            provienen de distribuidores autorizados. Garantizamos que tu juego se activará sin problemas
+                            en la plataforma correspondiente (Steam, Epic Games, etc.).</div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -71,11 +110,10 @@
                         <div class="card-body p-4">
                             <i class="bi bi-envelope-fill display-3 text-danger"></i>
                             <h3 class="card-title mt-3">Soporte por Ticket</h3>
-                            <p class="card-text">Para consultas detalladas o problemas con tu compra. Crea un ticket de soporte y te ayudaremos.</p>
-                            <!-- ESTE BOTÓN ABRE LA VENTANA EMERGENTE (MODAL) -->
-                            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#supportModal">
-                                Crear Ticket de Soporte
-                            </button>
+                            <p class="card-text">Para consultas detalladas o problemas con tu compra. Crea un ticket de
+                                soporte y te ayudaremos.</p>
+                            <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                data-bs-target="#supportModal">Crear Ticket de Soporte</button>
                         </div>
                     </div>
                 </div>
@@ -84,7 +122,8 @@
                         <div class="card-body p-4">
                             <i class="bi bi-whatsapp display-3 text-danger"></i>
                             <h3 class="card-title mt-3">Soporte por WhatsApp</h3>
-                            <p class="card-text">Para preguntas rápidas. Nuestro horario es de Lunes a Viernes de 9:00 a.m. a 6:00 p.m.</p>
+                            <p class="card-text">Para preguntas rápidas. Nuestro horario es de Lunes a Viernes de 9:00
+                                a.m. a 6:00 p.m.</p>
                             <a href="https://wa.me/51999999999" target="_blank" class="btn btn-danger">Chatear Ahora</a>
                         </div>
                     </div>
@@ -92,56 +131,109 @@
             </div>
         </section>
     </main>
-    
-    <footer class="bg-dark text-white text-center p-4 mt-5 border-top border-secondary"><div class="container"><p>&copy; 2025 - GameNexus. Todos los derechos reservados.</p></div></footer>
-    
-    <!-- =================================================================== -->
-    <!-- DEFINICIÓN DE LA VENTANA EMERGENTE PARA SOPORTE                   -->
-    <!-- =================================================================== -->
+
+    <footer class="bg-dark text-white text-center p-4 mt-5 border-top border-secondary">
+        <div class="container">
+            <p>&copy; 2025 - GameNexus. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
     <div class="modal fade" id="supportModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title fs-4 fw-bold">Crear un Ticket de Soporte</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    <h5 class="modal-title fs-4 fw-bold">Crear un Ticket de Soporte</h5><button type="button"
+                        class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
                 <div class="modal-body">
                     <p>Por favor, completa los siguientes campos para que podamos ayudarte lo más pronto posible.</p>
                     <form>
                         <div class="row">
-                            <div class="col-md-6 mb-3"><label for="supportName" class="form-label">Nombre Completo</label><input type="text" class="form-control" id="supportName" placeholder="Escribe tu nombre"></div>
-                            <div class="col-md-6 mb-3"><label for="supportEmail" class="form-label">Correo de Contacto</label><input type="email" class="form-control" id="supportEmail" placeholder="tu-correo@ejemplo.com"></div>
+                            <div class="col-md-6 mb-3"><label for="supportName" class="form-label">Nombre
+                                    Completo</label><input type="text" class="form-control" id="supportName"
+                                    placeholder="Escribe tu nombre"></div>
+                            <div class="col-md-6 mb-3"><label for="supportEmail" class="form-label">Correo de
+                                    Contacto</label><input type="email" class="form-control" id="supportEmail"
+                                    placeholder="tu-correo@ejemplo.com"></div>
                         </div>
-                        <div class="mb-3">
-                            <label for="supportSubject" class="form-label">Asunto del Problema</label>
-                            <select class="form-select" id="supportSubject">
+                        <div class="mb-3"><label for="supportSubject" class="form-label">Asunto del
+                                Problema</label><select class="form-select" id="supportSubject">
                                 <option selected>Selecciona una categoría...</option>
                                 <option value="1">Problema con mi compra o pago</option>
                                 <option value="2">No he recibido mi clave</option>
                                 <option value="3">La clave del juego no funciona</option>
                                 <option value="4">Duda sobre un juego o promoción</option>
                                 <option value="5">Otro</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label for="supportMessage" class="form-label">Describe tu problema en detalle</label>
-                            <textarea class="form-control" id="supportMessage" rows="5" placeholder="Incluye todos los detalles relevantes, como el nombre del juego, número de pedido, etc."></textarea>
+                            </select></div>
+                        <div class="mb-3"><label for="supportMessage" class="form-label">Describe tu problema en
+                                detalle</label><textarea class="form-control" id="supportMessage" rows="5"
+                                placeholder="Incluye todos los detalles relevantes, como el nombre del juego, número de pedido, etc."></textarea>
                         </div>
                     </form>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-danger">Enviar Ticket</button>
+                <div class="modal-footer"><button type="button" class="btn btn-secondary"
+                        data-bs-dismiss="modal">Cancelar</button><button type="button" class="btn btn-danger">Enviar
+                        Ticket</button></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-3 fw-bold">Inicia sesión</h5><button type="button" class="btn-close"
+                        data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3"><label for="loginEmail" class="form-label">Correo electrónico</label><input
+                                type="email" class="form-control" id="loginEmail" placeholder="Ingresa tu correo"></div>
+                        <div class="mb-3"><label for="loginPassword" class="form-label">Contraseña</label><input
+                                type="password" class="form-control" id="loginPassword"
+                                placeholder="Ingresa tu contraseña"></div>
+                        <div class="d-grid"><button type="submit" class="btn btn-warning fw-bold">Ingresar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <p>¿No tienes cuenta? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal"
+                            data-bs-target="#registerModal">Regístrate</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="registerModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fs-3 fw-bold">Crea tu cuenta</h5><button type="button" class="btn-close"
+                        data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3"><label for="registerName" class="form-label">Nombre</label><input type="text"
+                                class="form-control" id="registerName" placeholder="Ingresa tu nombre"></div>
+                        <div class="mb-3"><label for="registerEmail" class="form-label">Correo electrónico</label><input
+                                type="email" class="form-control" id="registerEmail" placeholder="Ingresa tu correo">
+                        </div>
+                        <div class="mb-3"><label for="registerPassword" class="form-label">Contraseña</label><input
+                                type="password" class="form-control" id="registerPassword"
+                                placeholder="Crea una contraseña"></div>
+                        <div class="d-grid"><button type="submit" class="btn btn-warning fw-bold">Crear Cuenta</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <p>¿Ya tienes una cuenta? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">Inicia sesión</a></p>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modales de Login y Registro (se mantienen por consistencia) -->
-    <div class="modal fade" id="loginModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title fs-3 fw-bold">Inicia sesión</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><form><div class="mb-3"><label for="loginEmail" class="form-label">Correo electrónico</label><input type="email" class="form-control" id="loginEmail" placeholder="Ingresa tu correo"></div><div class="mb-3"><label for="loginPassword" class="form-label">Contraseña</label><input type="password" class="form-control" id="loginPassword" placeholder="Ingresa tu contraseña"></div><div class="d-grid"><button type="submit" class="btn btn-warning fw-bold">Ingresar</button></div></form></div><div class="modal-footer justify-content-center"><p>¿No tienes cuenta? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#registerModal">Regístrate</a></p></div></div></div></div>
-    <div class="modal fade" id="registerModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5 class="modal-title fs-3 fw-bold">Crea tu cuenta</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><form><div class="mb-3"><label for="registerName" class="form-label">Nombre</label><input type="text" class="form-control" id="registerName" placeholder="Ingresa tu nombre"></div><div class="mb-3"><label for="registerEmail" class="form-label">Correo electrónico</label><input type="email" class="form-control" id="registerEmail" placeholder="Ingresa tu correo"></div><div class="mb-3"><label for="registerPassword" class="form-label">Contraseña</label><input type="password" class="form-control" id="registerPassword" placeholder="Crea una contraseña"></div><div class="d-grid"><button type="submit" class="btn btn-warning fw-bold">Crear Cuenta</button></div></form></div><div class="modal-footer justify-content-center"><p>¿Ya tienes una cuenta? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#loginModal">Inicia sesión</a></p></div></div></div></div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
