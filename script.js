@@ -1,0 +1,1 @@
+console.log("Script personalizado de GameNexus cargado.");
