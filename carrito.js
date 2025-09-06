@@ -1,35 +1,38 @@
 document.addEventListener('DOMContentLoaded', () => {
     const carritoContainer = document.getElementById('carrito-container');
     const carritoVacioMsg = document.getElementById('carrito-vacio');
-    const resumenCompra = document.getElementById('resumen-compra');
-    const subtotalPrecio = document.getElementById('subtotal-precio');
-    const totalPrecio = document.getElementById('total-precio');
+    const resumenContainer = document.getElementById('resumen-compra-container');
+    const subtotalPrecioEl = document.getElementById('subtotal-precio');
+    const totalPrecioEl = document.getElementById('total-precio');
+    const contadorCarritoEl = document.getElementById('carrito-contador');
 
     let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 
     function renderizarCarrito() {
-        carritoContainer.innerHTML = ''; // Limpiar el contenedor
+        // Limpiar el contenedor antes de renderizar
+        carritoContainer.innerHTML = '';
+        actualizarContador();
 
         if (carrito.length === 0) {
             carritoVacioMsg.classList.remove('d-none');
-            resumenCompra.classList.add('d-none');
+            resumenContainer.classList.add('d-none');
         } else {
             carritoVacioMsg.classList.add('d-none');
-            resumenCompra.classList.remove('d-none');
+            resumenContainer.classList.remove('d-none');
             
             carrito.forEach(producto => {
-                const itemHTML = `
-                    <div class="card mb-3 item-carrito">
+                const productoHTML = `
+                    <div class="card item-carrito mb-3">
                         <div class="card-body">
                             <div class="d-flex align-items-center">
                                 <img src="${producto.imagen}" class="img-fluid rounded" alt="${producto.nombre}">
-                                <div class="flex-grow-1 ms-3">
-                                    <h5 class="card-title">${producto.nombre}</h5>
-                                    <p class="card-text text-muted">Clave de activación digital</p>
+                                <div class="ms-3 flex-grow-1">
+                                    <h5 class="card-title mb-1">${producto.nombre}</h5>
+                                    <p class="card-text text-muted small">Clave de activación digital</p>
                                 </div>
-                                <div class="text-end">
-                                    <p class="fs-5 fw-bold mb-1">S/ ${producto.precio.toFixed(2)}</p>
-                                    <button class="btn btn-sm btn-outline-danger btn-remover" data-id="${producto.id}">
+                                <div class="text-end ms-3">
+                                    <p class="fs-5 fw-bold mb-2">S/ ${producto.precio.toFixed(2)}</p>
+                                    <button class="btn btn-sm btn-outline-danger btn-quitar" data-id="${producto.id}">
                                         <i class="bi bi-trash-fill"></i> Quitar
                                     </button>
                                 </div>
@@ -37,32 +40,45 @@ document.addEventListener('DOMContentLoaded', () => {
                         </div>
                     </div>
                 `;
-                carritoContainer.innerHTML += itemHTML;
+                carritoContainer.insertAdjacentHTML('beforeend', productoHTML);
             });
         }
         actualizarTotales();
-        agregarEventosRemover();
+        agregarEventosBotones();
     }
 
     function actualizarTotales() {
-        const subtotal = carrito.reduce((acc, producto) => acc + producto.precio, 0);
-        subtotalPrecio.textContent = `S/ ${subtotal.toFixed(2)}`;
-        totalPrecio.textContent = `S/ ${subtotal.toFixed(2)}`; // Asumiendo que no hay otros costos
+        const subtotal = carrito.reduce((total, producto) => total + producto.precio, 0);
+        subtotalPrecioEl.textContent = `S/ ${subtotal.toFixed(2)}`;
+        totalPrecioEl.textContent = `S/ ${subtotal.toFixed(2)}`;
     }
 
-    function agregarEventosRemover() {
-        const botonesRemover = document.querySelectorAll('.btn-remover');
-        botonesRemover.forEach(boton => {
+    function agregarEventosBotones() {
+        const botonesQuitar = document.querySelectorAll('.btn-quitar');
+        botonesQuitar.forEach(boton => {
             boton.addEventListener('click', (e) => {
-                const productoId = e.currentTarget.getAttribute('data-id');
-                // Filtrar el carrito para remover el producto
-                carrito = carrito.filter(producto => producto.id !== productoId);
-                // Actualizar localStorage
-                localStorage.setItem('carrito', JSON.stringify(carrito));
-                // Volver a renderizar
-                renderizarCarrito();
+                const idProducto = e.currentTarget.dataset.id;
+                quitarDelCarrito(idProducto);
             });
         });
+    }
+
+    function quitarDelCarrito(id) {
+        carrito = carrito.filter(producto => producto.id !== id);
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        renderizarCarrito(); // Volver a dibujar todo el carrito
+    }
+
+    function actualizarContador() {
+        if (contadorCarritoEl) {
+            const totalItems = carrito.length;
+            if (totalItems > 0) {
+                contadorCarritoEl.textContent = totalItems;
+                contadorCarritoEl.classList.remove('d-none');
+            } else {
+                contadorCarritoEl.classList.add('d-none');
+            }
+        }
     }
 
     renderizarCarrito();
