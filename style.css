@@ -137,7 +137,7 @@ body {
     font-size: 1.25rem;
 }
 
-/* ---- Estilos para tarjetas PÓSTER y HEADER (Sin cambios) ---- */
+/* ---- Estilos para tarjetas PÓSTER y HEADER ---- */
 .product-card-poster .product-image-container {
     width: 100%;
     aspect-ratio: 3 / 4;
@@ -156,52 +156,13 @@ body {
 }
 
 /* ========================================================== */
-/*  REGLAS DE ADAPTABILIDAD PARA MÓVILES                     */
+/*  SOLUCIÓN FINAL Y SENCILLA PARA EL CARRUSEL EN MÓVILES     */
 /* ========================================================== */
-
-/* Solo se aplica en pantallas pequeñas (móviles) */
 @media (max-width: 767.98px) {
 
-    /* Oculta los elementos de PC en la barra de navegación */
-    .navbar-nav,
-    .navbar .d-flex.mx-auto {
+    /* En pantallas pequeñas, oculta los items 2, 3 y 4 de cada fila del carrusel */
+    #carouselNovedades .carousel-item .col-md-3:not(:first-child) {
         display: none;
-    }
-
-    /* Estilos para el menú desplegable */
-    .navbar-collapse {
-        /* Estilos si quieres personalizar el menú desplegado */
-    }
-
-    /* --- LA MAGIA DEL CARRUSEL ESTÁ AQUÍ --- */
-    #carouselNovedades .carousel-item .col-md-3 {
-        display: none;
-        /* Oculta todas las tarjetas por defecto */
-    }
-
-    #carouselNovedades .carousel-item .col-md-3:first-child {
-        display: block;
-        /* Muestra solo la primera tarjeta de cada grupo */
-    }
-}
-
-/* Solo se aplica en pantallas grandes (PC) */
-@media (min-width: 768px) {
-
-    /* Oculta el botón de hamburguesa */
-    .navbar-toggler {
-        display: none;
-    }
-
-    /* Muestra los elementos de navegación de PC */
-    .navbar-nav,
-    .navbar .d-flex.mx-auto {
-        display: flex !important;
-    }
-
-    .navbar-collapse {
-        display: flex !important;
-        flex-basis: auto;
     }
 }
 
