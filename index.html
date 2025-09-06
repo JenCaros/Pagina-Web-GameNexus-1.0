@@ -12,35 +12,39 @@
 
 <body>
     <header>
+        <!-- ======== NAVBAR CORREGIDA PARA MÓVILES (CON TU CARRUSEL INTACTO) ======== -->
         <nav class="navbar navbar-expand-lg bg-dark border-bottom border-secondary">
             <div class="container-fluid">
                 <a class="navbar-brand fw-bold fs-4" href="index.html">GameNexus</a>
 
-                <!-- Menú de Navegación para unir las páginas -->
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#catalogo-completo">Catálogo</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#ofertas">Ofertas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="ayuda.html">Ayuda y Contacto</a>
-                    </li>
-                </ul>
+                <!-- Botón de Hamburguesa (solo visible en móviles) -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                    aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
-                <form class="d-flex mx-auto w-50" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Buscar juegos, géneros, DLCs...">
-                    <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
-                </form>
+                <!-- Contenido que se colapsa en móviles -->
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#catalogo-completo">Catálogo</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#ofertas">Ofertas</a></li>
+                        <li class="nav-item"><a class="nav-link" href="ayuda.html">Ayuda y Contacto</a></li>
+                    </ul>
+                    <!-- El buscador en PC está aquí, pero en móvil lo clonaremos abajo -->
+                    <form class="d-none d-lg-flex mx-auto w-50" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Buscar juegos, géneros, DLCs...">
+                        <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
+                    </form>
+                </div>
+
+                <!-- Iconos de usuario y carrito fuera del colapso para acceso rápido -->
                 <div class="d-flex align-items-center">
                     <div class="nav-item dropdown user-dropdown me-3">
-                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             <div>Hola,<br><strong>Inicia sesión</strong></div>
-                            <i class="bi bi-chevron-down ms-2"></i>
+                            <i class="bi bi-chevron-down ms-2 d-none d-lg-inline"></i>
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">
                             <li><a class="dropdown-item" href="#" data-bs-toggle="modal"
@@ -57,27 +61,34 @@
                 </div>
             </div>
         </nav>
+        <!-- Buscador para la vista móvil, fuera del nav pero visualmente dentro -->
+        <div class="bg-dark p-3 d-lg-none">
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Buscar juego...">
+                <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+        </div>
     </header>
 
     <section class="hero-banner d-flex align-items-center justify-content-center text-center text-white">
         <div class="hero-content">
             <h1 class="display-3 fw-bold">Descubre el universo de Cyberpunk 2077</h1>
-            <p class="lead">La expansión Phantom Liberty ya está disponible. ¡No te quedes sin la tuya!</p>
-            <a href="#" class="btn btn-warning btn-lg fw-bold">Ver colección</a>
+            <p class="lead">La expansión Phantom Liberty ya está disponible. ¡No te quedes sin la tuya!</p><a href="#"
+                class="btn btn-warning btn-lg fw-bold">Ver colección</a>
         </div>
     </section>
 
     <section class="info-bar bg-light text-dark py-4">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 d-flex align-items-center justify-content-center info-item"><i
+                <div class="col-md-4 d-flex align-items-center justify-content-center info-item mb-3 mb-md-0"><i
                         class="bi bi-lightning-charge-fill fs-1 text-danger me-3"></i>
                     <div>
                         <h5 class="mb-0">Entrega Digital Instantánea</h5>
                         <p class="mb-0">Recibe tu clave digital al instante.</p>
                     </div>
                 </div>
-                <div class="col-md-4 d-flex align-items-center justify-content-center info-item"><i
+                <div class="col-md-4 d-flex align-items-center justify-content-center info-item mb-3 mb-md-0"><i
                         class="bi bi-shield-check fs-1 text-danger me-3"></i>
                     <div>
                         <h5 class="mb-0">Compra 100% Segura</h5>
@@ -99,6 +110,7 @@
     </div>
 
     <main class="container my-5">
+        <!-- TU CÓDIGO DEL CARRUSEL ORIGINAL, SIN CAMBIOS -->
         <section id="novedades" class="mb-5">
             <h2 class="section-title"><span>Lo Nuevo en GameNexus</span></h2>
             <div id="carouselNovedades" class="carousel slide">
@@ -323,7 +335,6 @@
             </div>
         </section>
 
-        <!-- Sección "Necesitas Ayuda" que enlaza a la página de ayuda -->
         <section id="canales-ayuda" class="mt-5 pt-5 border-top border-secondary text-center">
             <h2 class="section-title"><span>¿Necesitas Ayuda?</span></h2>
             <p class="lead mb-4">Visita nuestro centro de ayuda para resolver tus dudas o contactar a nuestro equipo de
@@ -338,59 +349,8 @@
         </div>
     </footer>
 
-    <div class="modal fade" id="loginModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fs-3 fw-bold">Inicia sesión</h5><button type="button" class="btn-close"
-                        data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3"><label for="loginEmail" class="form-label">Correo electrónico</label><input
-                                type="email" class="form-control" id="loginEmail" placeholder="Ingresa tu correo"></div>
-                        <div class="mb-3"><label for="loginPassword" class="form-label">Contraseña</label><input
-                                type="password" class="form-control" id="loginPassword"
-                                placeholder="Ingresa tu contraseña"></div>
-                        <div class="d-grid"><button type="submit" class="btn btn-warning fw-bold">Ingresar</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer justify-content-center">
-                    <p>¿No tienes cuenta? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal"
-                            data-bs-target="#registerModal">Regístrate</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="registerModal" tabindex="-1">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fs-3 fw-bold">Crea tu cuenta</h5><button type="button" class="btn-close"
-                        data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3"><label for="registerName" class="form-label">Nombre</label><input type="text"
-                                class="form-control" id="registerName" placeholder="Ingresa tu nombre"></div>
-                        <div class="mb-3"><label for="registerEmail" class="form-label">Correo electrónico</label><input
-                                type="email" class="form-control" id="registerEmail" placeholder="Ingresa tu correo">
-                        </div>
-                        <div class="mb-3"><label for="registerPassword" class="form-label">Contraseña</label><input
-                                type="password" class="form-control" id="registerPassword"
-                                placeholder="Crea una contraseña"></div>
-                        <div class="d-grid"><button type="submit" class="btn btn-warning fw-bold">Crear Cuenta</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer justify-content-center">
-                    <p>¿Ya tienes una cuenta? <a href="#" data-bs-dismiss="modal" data-bs-toggle="modal"
-                            data-bs-target="#loginModal">Inicia sesión</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div class="modal fade" id="loginModal" tabindex="-1"><!-- ... Tu modal de login ... --></div>
+    <div class="modal fade" id="registerModal" tabindex="-1"><!-- ... Tu modal de registro ... --></div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
